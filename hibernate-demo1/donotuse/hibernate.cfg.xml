@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection properties - Driver, URL, user, password -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hibernatedemo</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">admin</property>
+
+		<!-- Outputs the SQL queries, should be disabled in Production -->
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<!-- create specifies that whenever the program run, drop all and re-create all records - prefer for development environment-->
+		<property name="hbm2ddl.auto">create</property>
+		<!-- Dialect is required to let Hibernate know the Database Type, MySQL, Oracle etc
+			Hibernate 4 automatically figure out Dialect from Database Connection Metadata -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- mapping file, we can use Bean annotations too -->
+		<mapping resource="META-INF/employee.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.hcl.cong.hibernate1.hibernate_demo1.Employee" table="employee">
+		<id name="id" column="ID">
+			<generator class="native" />
+		</id>
+		<property name="firstName" column="FIRST_NAME" />
+		<property name="lastName" column="LAST_NAME" />
+		<property name="job" column="JOB" />
+		<property name="salary" column="SALARY" />
+	</class>
+</hibernate-mapping>
